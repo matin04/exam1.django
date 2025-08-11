@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box1" style="width: 40%; margin: auto; border: 5px solid; text-align: center; margin-top: 140px; padding: 20px; border-radius: 20px;" >
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label >title</label>
+        <input type="text" name="title" value="{{ book.title }}" ><br><br><br>
+    <label  for="">quantity</label>
+    <input type="text" name="quantity"  value="{{book.quantity}}"><br><br>
+
+    <label  for="">price</label>
+    <input type="text" name="price"  value="{{book.price}}"><br><br>
+
+        
+    <label  for="">photo</label>
+    <input type="file" name="photo"><br><br><br>
+
+    <label  for="">video</label>
+    <input  type="file" name="video"><br><br><br>
+
+    <button  type="submit">Save</button>
+
+    </form>
+
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body >
+    <h1>books</h1>
+    
+    <div class="box" >
+        <form action="" method="post" enctype="multipart/form-data">
+{% csrf_token %}
+    {% for book in books %}
+
+    <label for="">{{book.title}}</label><br>
+    <label for="">{{book.quantity}}</label><br>
+    <label for="">{{book.price}}</label><br>
+        <a href="{% url 'delete_book' book.id %}">Delete</a>
+    <a  href="{% url 'update_book' book.id %}">Update</a> 
+    <img width="400px " height="400px" src="{{book.photo.url}}" alt=""><br><br>
+    <video width="400px" height="400px" controls>
+        <source src="{{book.video.url }} " type="video/mp4">
+    </video>  <br>
+
+    <br><br><br><br>
+    {% endfor %}
+    </form>
+    </div>
+
+
+
+</body>
+</html>
+
